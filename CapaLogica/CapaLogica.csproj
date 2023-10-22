@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImplementacionServicioEmpleados.cs" />
+    <Compile Include="ImplementacionServicioLiquidacion.cs" />
     <Compile Include="IServicioEmpleados.cs" />
+    <Compile Include="IServiciosLiquidacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

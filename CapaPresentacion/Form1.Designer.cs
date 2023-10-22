@@ -63,6 +63,7 @@
             this.btnLiquidacion.TabIndex = 2;
             this.btnLiquidacion.Text = "LIQUIDACIÓN";
             this.btnLiquidacion.UseVisualStyleBackColor = true;
+            this.btnLiquidacion.Click += new System.EventHandler(this.btnLiquidacion_Click);
             // 
             // Form1
             // 

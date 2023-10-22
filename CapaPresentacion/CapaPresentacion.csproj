@@ -58,6 +58,12 @@
     <Compile Include="Gestion_Empleados.Designer.cs">
       <DependentUpon>Gestion_Empleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gestion_Liquidacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion_Liquidacion.Designer.cs">
+      <DependentUpon>Gestion_Liquidacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gestion_Empleados.resx">
       <DependentUpon>Gestion_Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion_Liquidacion.resx">
+      <DependentUpon>Gestion_Liquidacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

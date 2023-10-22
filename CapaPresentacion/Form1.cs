@@ -22,5 +22,11 @@ namespace CapaPresentacion
             Gestion_Empleados gestion_Empleados = new Gestion_Empleados();
             gestion_Empleados.ShowDialog();
         }
+
+        private void btnLiquidacion_Click(object sender, EventArgs e)
+        {
+            Gestion_Liquidacion gestion_Liquidacion = new Gestion_Liquidacion();
+            gestion_Liquidacion.ShowDialog();
+        }
     }
 }

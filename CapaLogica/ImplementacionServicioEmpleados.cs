@@ -100,7 +100,6 @@ namespace CapaLogica
 
             return empleados;
         }
-
         public List<Empleados> VerPorNombre(string name)
         {
             List<Empleados> empleados = new List<Empleados>();
