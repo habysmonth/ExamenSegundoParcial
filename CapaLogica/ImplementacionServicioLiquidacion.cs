@@ -12,58 +12,67 @@ namespace CapaLogica
     public class ImplementacionServicioLiquidacion : IServiciosLiquidacion
     {
         string ruta = "Archivo_Liquidaciones.txt";
-        public List<Liquidacion> VerLiquidaciones(int idd)
+
+        public List<Liquidacion> VerLiquidaciones(int mess)
         {
             List<Liquidacion> liquidaciones = new List<Liquidacion>();
 
-            string[] lineas = File.ReadAllLines(ruta);
-            foreach (var linea in lineas)
+            if (File.Exists(ruta))
             {
-
-                string[] campos = linea.Split(';');
-
-                if (campos[0] == idd.ToString())
+                string[] lineas = File.ReadAllLines(ruta);
+                foreach (var linea in lineas)
                 {
-                    if (campos.Length == 8)
-                    {
-                        if (int.TryParse(campos[0], out int id) &&
-                            int.TryParse(campos[1], out int año) &&
-                            int.TryParse(campos[2], out int mes) &&
-                            float.TryParse(campos[3], out float tsalario) &&
-                            float.TryParse(campos[4], out float tsalud) &&
-                            float.TryParse(campos[5], out float tpension) &&
-                            float.TryParse(campos[6], out float tauxtrans) &&
-                            float.TryParse(campos[7], out float total))
-                        {
-                            
 
-                            Liquidacion liquidacion = new Liquidacion
+                    string[] campos = linea.Split(';');
+
+                    if (campos[2] == mess.ToString())
+                    {
+                        if (campos.Length == 8)
+                        {
+                            if (int.TryParse(campos[0], out int id) &&
+                                int.TryParse(campos[1], out int año) &&
+                                int.TryParse(campos[2], out int mes) &&
+                                float.TryParse(campos[3], out float tsalario) &&
+                                float.TryParse(campos[4], out float tsalud) &&
+                                float.TryParse(campos[5], out float tpension) &&
+                                float.TryParse(campos[6], out float tauxtrans) &&
+                                float.TryParse(campos[7], out float total))
                             {
 
-                                Id = id,
-                                Año = año,
-                                Mes = mes,
-                                TotalSalario = tsalario,
-                                TotalSalud = tsalud,
-                                TotalPension = tpension,
-                                TotalAuxTrans = tauxtrans,
-                                Total = total
 
-                            };
+                                Liquidacion liquidacion = new Liquidacion
+                                {
 
-                            liquidaciones.Add(liquidacion);
+                                    Id = id,
+                                    Año = año,
+                                    Mes = mes,
+                                    TotalSalario = tsalario,
+                                    TotalSalud = tsalud,
+                                    TotalPension = tpension,
+                                    TotalAuxTrans = tauxtrans,
+                                    Total = total
+
+                                };
+
+                                liquidaciones.Add(liquidacion);
+                            }
                         }
                     }
-                }
-                else
-                {
-                    Console.WriteLine("No hay coincidencias");
-                }
+                    else
+                    {
+                        return null;
+                    }
 
 
+                }
+
+                return liquidaciones;
             }
-
-            return liquidaciones;
+            else
+            {
+                return null;
+            }
+            
         }
     }
 }

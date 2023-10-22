@@ -21,10 +21,18 @@ namespace CapaPresentacion
 
         private void btnBuscarLiquidacion_Click(object sender, EventArgs e)
         {
-            int idFactura = int.Parse(txtBuscarLiquidacion.Text);
-            servicioLiquidacion.VerLiquidaciones(idFactura);
+            int mess = int.Parse(txtBuscarLiquidacion.Text);
+            servicioLiquidacion.VerLiquidaciones(mess);
 
-
+            if (servicioLiquidacion.VerLiquidaciones(mess) == null)
+            {
+                Liquidar liquidar = new Liquidar();
+                liquidar.Show();
+            }
+            else
+            {
+                dtgLiquidaciones.DataSource = servicioLiquidacion.VerLiquidaciones(mess);
+            }
         }
     }
 }

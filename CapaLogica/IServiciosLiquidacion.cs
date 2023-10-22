@@ -9,6 +9,6 @@ namespace CapaLogica
 {
     public interface IServiciosLiquidacion
     {
-        List<Liquidacion> VerLiquidaciones(int id);
+        List<Liquidacion> VerLiquidaciones(int mess);
     }
 }
