@@ -41,20 +41,21 @@
             this.txtRNombre = new System.Windows.Forms.TextBox();
             this.txtRIdentifiacion = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dtgEmpleados = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtBuscarEmpleado = new System.Windows.Forms.TextBox();
-            this.btnBuscarEmpleado = new System.Windows.Forms.Button();
-            this.txtIdentificacion = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtSalario = new System.Windows.Forms.TextBox();
-            this.txtEstado = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnEliminarEmpleado = new System.Windows.Forms.Button();
+            this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.btnActualizarEmpleado = new System.Windows.Forms.Button();
+            this.btnEliminarEmpleado = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.txtSalario = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtIdentificacion = new System.Windows.Forms.TextBox();
+            this.btnBuscarEmpleado = new System.Windows.Forms.Button();
+            this.txtBuscarEmpleado = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtgEmpleados = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -186,6 +187,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.cboFiltro);
             this.tabPage2.Controls.Add(this.btnActualizarEmpleado);
             this.tabPage2.Controls.Add(this.btnEliminarEmpleado);
             this.tabPage2.Controls.Add(this.label10);
@@ -208,106 +210,27 @@
             this.tabPage2.Text = "LISTA DE TODOS";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dtgEmpleados
+            // cboFiltro
             // 
-            this.dtgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgEmpleados.Location = new System.Drawing.Point(51, 117);
-            this.dtgEmpleados.Name = "dtgEmpleados";
-            this.dtgEmpleados.ReadOnly = true;
-            this.dtgEmpleados.RowHeadersWidth = 62;
-            this.dtgEmpleados.RowTemplate.Height = 28;
-            this.dtgEmpleados.Size = new System.Drawing.Size(577, 420);
-            this.dtgEmpleados.TabIndex = 0;
+            this.cboFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFiltro.FormattingEnabled = true;
+            this.cboFiltro.Items.AddRange(new object[] {
+            "ESTADO",
+            "NOMBRE"});
+            this.cboFiltro.Location = new System.Drawing.Point(66, 71);
+            this.cboFiltro.Name = "cboFiltro";
+            this.cboFiltro.Size = new System.Drawing.Size(133, 28);
+            this.cboFiltro.TabIndex = 14;
             // 
-            // label6
+            // btnActualizarEmpleado
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(174, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(339, 32);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "LISTA DE EMPLEADOS";
-            // 
-            // txtBuscarEmpleado
-            // 
-            this.txtBuscarEmpleado.Location = new System.Drawing.Point(51, 75);
-            this.txtBuscarEmpleado.Name = "txtBuscarEmpleado";
-            this.txtBuscarEmpleado.Size = new System.Drawing.Size(288, 26);
-            this.txtBuscarEmpleado.TabIndex = 2;
-            // 
-            // btnBuscarEmpleado
-            // 
-            this.btnBuscarEmpleado.Location = new System.Drawing.Point(345, 69);
-            this.btnBuscarEmpleado.Name = "btnBuscarEmpleado";
-            this.btnBuscarEmpleado.Size = new System.Drawing.Size(108, 38);
-            this.btnBuscarEmpleado.TabIndex = 3;
-            this.btnBuscarEmpleado.Text = "Buscar";
-            this.btnBuscarEmpleado.UseVisualStyleBackColor = true;
-            // 
-            // txtIdentificacion
-            // 
-            this.txtIdentificacion.Location = new System.Drawing.Point(781, 140);
-            this.txtIdentificacion.Name = "txtIdentificacion";
-            this.txtIdentificacion.Size = new System.Drawing.Size(288, 26);
-            this.txtIdentificacion.TabIndex = 4;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(781, 202);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(288, 26);
-            this.txtNombre.TabIndex = 5;
-            // 
-            // txtSalario
-            // 
-            this.txtSalario.Location = new System.Drawing.Point(781, 269);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(288, 26);
-            this.txtSalario.TabIndex = 6;
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Location = new System.Drawing.Point(781, 337);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(288, 26);
-            this.txtEstado.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(672, 146);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 20);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Identificación";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(710, 205);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 20);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Nombre";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(717, 275);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 20);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Salario";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(715, 343);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 20);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Estado";
+            this.btnActualizarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarEmpleado.Location = new System.Drawing.Point(905, 453);
+            this.btnActualizarEmpleado.Name = "btnActualizarEmpleado";
+            this.btnActualizarEmpleado.Size = new System.Drawing.Size(132, 60);
+            this.btnActualizarEmpleado.TabIndex = 13;
+            this.btnActualizarEmpleado.Text = "Actualizar";
+            this.btnActualizarEmpleado.UseVisualStyleBackColor = true;
             // 
             // btnEliminarEmpleado
             // 
@@ -319,15 +242,107 @@
             this.btnEliminarEmpleado.Text = "Eliminar";
             this.btnEliminarEmpleado.UseVisualStyleBackColor = true;
             // 
-            // btnActualizarEmpleado
+            // label10
             // 
-            this.btnActualizarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarEmpleado.Location = new System.Drawing.Point(905, 453);
-            this.btnActualizarEmpleado.Name = "btnActualizarEmpleado";
-            this.btnActualizarEmpleado.Size = new System.Drawing.Size(132, 60);
-            this.btnActualizarEmpleado.TabIndex = 13;
-            this.btnActualizarEmpleado.Text = "Actualizar";
-            this.btnActualizarEmpleado.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(715, 343);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 20);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Estado";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(717, 275);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 20);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Salario";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(710, 205);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 20);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Nombre";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(672, 146);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 20);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Identificación";
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Location = new System.Drawing.Point(781, 337);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(288, 26);
+            this.txtEstado.TabIndex = 7;
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.Location = new System.Drawing.Point(781, 269);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(288, 26);
+            this.txtSalario.TabIndex = 6;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(781, 202);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(288, 26);
+            this.txtNombre.TabIndex = 5;
+            // 
+            // txtIdentificacion
+            // 
+            this.txtIdentificacion.Location = new System.Drawing.Point(781, 140);
+            this.txtIdentificacion.Name = "txtIdentificacion";
+            this.txtIdentificacion.Size = new System.Drawing.Size(288, 26);
+            this.txtIdentificacion.TabIndex = 4;
+            // 
+            // btnBuscarEmpleado
+            // 
+            this.btnBuscarEmpleado.Location = new System.Drawing.Point(439, 65);
+            this.btnBuscarEmpleado.Name = "btnBuscarEmpleado";
+            this.btnBuscarEmpleado.Size = new System.Drawing.Size(108, 38);
+            this.btnBuscarEmpleado.TabIndex = 3;
+            this.btnBuscarEmpleado.Text = "Buscar";
+            this.btnBuscarEmpleado.UseVisualStyleBackColor = true;
+            this.btnBuscarEmpleado.Click += new System.EventHandler(this.btnBuscarEmpleado_Click);
+            // 
+            // txtBuscarEmpleado
+            // 
+            this.txtBuscarEmpleado.Location = new System.Drawing.Point(205, 71);
+            this.txtBuscarEmpleado.Name = "txtBuscarEmpleado";
+            this.txtBuscarEmpleado.Size = new System.Drawing.Size(228, 26);
+            this.txtBuscarEmpleado.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(174, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(339, 32);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "LISTA DE EMPLEADOS";
+            // 
+            // dtgEmpleados
+            // 
+            this.dtgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgEmpleados.Location = new System.Drawing.Point(51, 117);
+            this.dtgEmpleados.Name = "dtgEmpleados";
+            this.dtgEmpleados.ReadOnly = true;
+            this.dtgEmpleados.RowHeadersWidth = 62;
+            this.dtgEmpleados.RowTemplate.Height = 28;
+            this.dtgEmpleados.Size = new System.Drawing.Size(577, 420);
+            this.dtgEmpleados.TabIndex = 0;
             // 
             // Gestion_Empleados
             // 
@@ -377,5 +392,6 @@
         private System.Windows.Forms.Button btnEliminarEmpleado;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cboFiltro;
     }
 }

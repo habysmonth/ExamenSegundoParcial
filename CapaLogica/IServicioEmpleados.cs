@@ -12,5 +12,7 @@ namespace CapaLogica
         string Guardar(Empleados empleados);
         bool Buscar(int refer);
         List<Empleados> Leer();
+        List<Empleados> VerPorNombre(string name);
+        List<Empleados> VerPorEstado(string estatus);
     }
 }

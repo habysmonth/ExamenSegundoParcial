@@ -15,6 +15,7 @@ namespace CapaPresentacion
 {
     public partial class Gestion_Empleados : Form
     {
+        
         ImplementacionServicioEmpleados servicioEmpleados = new ImplementacionServicioEmpleados();
         public Gestion_Empleados()
         {
@@ -61,9 +62,9 @@ namespace CapaPresentacion
                 double salario;
 
                 id = int.Parse(txtRIdentifiacion.Text);
-                nombre = txtRNombre.Text;
+                nombre = txtRNombre.Text.ToLower();
                 salario = double.Parse(txtRSalarioBase.Text);
-                estado = cboEstado.Text;
+                estado = cboEstado.Text.ToLower();
 
                 bool verificar = servicioEmpleados.Buscar(id);
 
@@ -87,21 +88,49 @@ namespace CapaPresentacion
         }
         public void VerPorNombre()
         {
-            
+
+            string nombre = txtBuscarEmpleado.Text.ToLower();
+            dtgEmpleados.DataSource = servicioEmpleados.VerPorNombre(nombre);
+            encabezados();
+
+        }
+        public void VerPorEstado()
+        {
+            string estado = txtBuscarEmpleado.Text.ToLower();
+            dtgEmpleados.DataSource= servicioEmpleados.VerPorEstado(estado);
+            encabezados();
         }
         public void MostrarLista()
         {
             dtgEmpleados.DataSource = servicioEmpleados.Leer();
 
+            encabezados();
+        }
+        public void encabezados()
+        {
             dtgEmpleados.Columns["Identificacion"].HeaderText = "Identificación";
             dtgEmpleados.Columns["Nombre"].HeaderText = "Nombre";
             dtgEmpleados.Columns["SalarioBase"].HeaderText = "Salario Base";
             dtgEmpleados.Columns["Estado"].HeaderText = "Estado";
         }
-
         private void Gestion_Empleados_Load(object sender, EventArgs e)
         {
             MostrarLista();
+            cboFiltro.SelectedIndex = 1;
+        }
+        private void btnBuscarEmpleado_Click(object sender, EventArgs e)
+        {
+            string opcion = cboFiltro.SelectedItem.ToString().ToLower();
+
+            if (opcion == "nombre")
+            {
+                VerPorNombre();
+
+            }
+            else if (opcion == "estado")
+            {
+                VerPorEstado();
+            }
         }
     }
 }
