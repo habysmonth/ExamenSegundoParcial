@@ -16,5 +16,10 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://drive.google.com/drive/folders/1t6cW2ge19jn8xNtY-k5oKxduX_qo2v5U?usp=sharing");
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace CapaPresentacion
 
         private void btnBuscarLiquidacion_Click(object sender, EventArgs e)
         {
+            
             int mess = int.Parse(txtBuscarLiquidacion.Text);
             servicioLiquidacion.VerLiquidaciones(mess);
 
