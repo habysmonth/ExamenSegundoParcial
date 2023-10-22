@@ -11,5 +11,6 @@ namespace CapaLogica
     {
         string Guardar(Empleados empleados);
         bool Buscar(int refer);
+        List<Empleados> Leer();
     }
 }

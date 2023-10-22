@@ -44,5 +44,19 @@ namespace CapaLogica
                 return e.Message;
             }
         }
+
+        public List<Empleados> Leer()
+        {
+            try
+            {
+                return archivoEmpleado.Mostrar();
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.ToString());
+                return new List<Empleados>();
+            }
+        }
     }
 }

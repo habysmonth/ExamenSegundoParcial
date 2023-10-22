@@ -85,6 +85,23 @@ namespace CapaPresentacion
                 e.Handled = true; // Evita que se ingrese el carácter no deseado
             }
         }
-        
+        public void VerPorNombre()
+        {
+            
+        }
+        public void MostrarLista()
+        {
+            dtgEmpleados.DataSource = servicioEmpleados.Leer();
+
+            dtgEmpleados.Columns["Identificacion"].HeaderText = "Identificación";
+            dtgEmpleados.Columns["Nombre"].HeaderText = "Nombre";
+            dtgEmpleados.Columns["SalarioBase"].HeaderText = "Salario Base";
+            dtgEmpleados.Columns["Estado"].HeaderText = "Estado";
+        }
+
+        private void Gestion_Empleados_Load(object sender, EventArgs e)
+        {
+            MostrarLista();
+        }
     }
 }
